@@ -1,14 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
-    <meta name="viewport" content="width=device-width, intial-scale=1">
-
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>That are Laravel Views with Laravel Blade</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ URL::to('css/styles.css') }}">
     <title>Laravel</title>
-    <h1>hallo</h1>
 </head>
 <body>
-@yield('content')
+@include('layouts.header')
+<div>
+    @if(Session::has('info'))
+        <div class="row">
+            <div class="col-md-12">
+                <p class="alert alert-info">{{ Session::get('info') }}</p>
+            </div>
+        </div>
+    @endif
+    @yield('content')
+</div>
 </body>
 </html>

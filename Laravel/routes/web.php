@@ -11,11 +11,36 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/about',function(){
+Route::get('/', [
+    'uses' => 'StudentController@getHome',
+    'as' => 'home']);
 
-	return view('master');
-});
+Route::get('/add',[
+    'uses' => 'StudentController@getAdd',
+    'as' => 'add']);
+
+Route::get('edit/{id}', [
+    'uses' => 'StudentController@getStudentsById',
+    'as' => 'overview.edit']);
+
+
+Route::get('delete/{id}', [
+    'uses' => 'StudentController@deleteStudent',
+    'as' => 'delete']);
+
+
+Route::get('/overview',[
+    'uses' => 'StudentController@getOverview',
+    'as' => 'overview']);
+
+
+Route::post('/ietsAnders',[
+    'uses' => 'StudentController@addStudent',
+    'as' => 'addStudent']);
+
+Route::post('/create',[
+    'uses' => 'StudentController@updateStudent',
+    'as' => 'update']);
+
+

@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
     @section('content')
-        <h2>bok</h2>
+        <div class="row" style="align-content: center">
+            <h1 class="quote">PE1 werken met Laravel MVC</h1>
+        </div>
     @endsection
+
+
