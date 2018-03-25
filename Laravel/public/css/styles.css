@@ -1,6 +1,10 @@
+body {
+    background-color: lightpink;
+}
+
 .quote {
     font: 400 72px Helvetica, sans-serif;
-    color: black;
+    color: blueviolet;
     text-align: center;
 }
 
@@ -8,7 +12,7 @@
     color: black;
 }
 
-
 .row{
     padding: 2%;
 }
+

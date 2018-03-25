@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/', [
     'uses' => 'StudentController@getHome',
     'as' => 'home']);
